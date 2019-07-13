@@ -1,0 +1,38 @@
+s = 'abcdeejqwertyuvwadsabc'
+alpha = []
+n = 0
+string = ""
+while n < len(s)-1:
+    
+    string = string + s[n]
+    
+    if s[n] >= s[n+1]:
+        alpha.append(string)
+        string = ""
+    n += 1
+    
+    if n == len(s)-1:
+        if s[n]>= s[n-1]:
+            string = string + s[n]
+        alpha.append(string)
+equal = []
+length = len(alpha[0])
+for i in range(len(alpha)):
+    
+    current = alpha[i]
+    if len(alpha[i]) > length:
+        length = len(alpha[i])
+
+for i in range(len(alpha)):
+    
+    if len(alpha[i]) == length:
+        equal.append(alpha[i])
+
+letter = equal[0][0] 
+for i in range(len(equal)):
+    
+    if letter > equal[i][0]:
+        letter = equal[i][0]
+        
+    current = equal[i]
+    print(equal[i])
